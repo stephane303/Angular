@@ -12,6 +12,7 @@ namespace Angular
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute(""); // let IIS handle the default document
 
             routes.MapRoute(
                 name: "Default",
