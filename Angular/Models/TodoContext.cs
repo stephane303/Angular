@@ -18,5 +18,11 @@ namespace Angular.Models
         }
 
         public DbSet<Todo> Todoes { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(
+                new MigrateDatabaseToLatestVersion<TodoContext, Migrations.Configuration>());
+        }
     }
 }
